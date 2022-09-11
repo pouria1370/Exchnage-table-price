@@ -1,0 +1,38 @@
+/* 
+                <Line
+                data={{
+                  labels: historicalData.map((coin) => {
+                    let data = new Date(coin[0]);
+                    let time =
+                      data.getHours() > 12
+                        ? `${data.getHours() - 12}:${data.getMinutes()} pm`
+                        : `${data.getHours()}:${data.getMinutes()} am`;
+
+                    return days === 1 ? time : data.toLocaleDateString();
+                  }),
+                  datasets: [
+                    {
+                      data: historicalData.map((coin) => coin[1]),
+                      label: `Price (past ${days} Days ) in ${currency} `,
+                      borderColor: "#EEBC1D",
+                    },
+                  ],
+                }}
+                options={{
+                  elements: {
+                    point: { radius: 1 },
+                  },
+                }}
+              />
+              <div style={{
+
+                  display:"flex",
+                  marginTop:20,
+                  justifyContent:"space-around",
+                  width:"100%"
+              }}>
+              {chartDays.map(day=>(
+                  <SelectButton key={day.value} selected={day.value===days} onClick={()=>setDays(day.value)} >{day.label}</SelectButton>
+              ))}
+              </div>
+          */
